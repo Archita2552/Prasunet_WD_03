@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bona Nova SC';
+    background-color:gradient();
+    color:rgba(212,173,229,0.781);
+    background: linear-gradient(120deg, #f19c9c, #e8c3a8, #fff8c9, #dbf3c3, #a0d8f0, #cba1e8);
+    background-size: 400% 400%;
+    height: 100vh;
+    margin: 0;
+    animation: gradientAnimation 10s ease infinite;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+    color: #555;
+}
+
+#choice, #game {
+    margin-top: 20px;
+}
+
+#turn {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border: 2px solid #555;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #ffccf9;
+}
+
+.cell.pop {
+    animation: popUp 0.3s forwards;
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animated-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ffccf9;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.animated-button:hover {
+    transform: scale(1.1);
+    background-color: #fcb69f;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: red;
+}
